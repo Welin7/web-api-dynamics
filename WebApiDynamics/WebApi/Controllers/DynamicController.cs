@@ -40,13 +40,13 @@ public class DynamicController<T> : ControllerBase where T : class
         _applicationDbContext.Set<T>().Add(entity);
         await _applicationDbContext.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetById), new { id = entity.GetType().GetProperty("id").GetValue(entity)}, entity);
+        return CreatedAtAction(nameof(GetById), new { id = entity.GetType().GetProperty("Id").GetValue(entity)}, entity);
     }
 
     [HttpPut("{id}")]
     public async Task<ActionResult<T>> Put(int id, T entity)
     {
-        if (id != (int)entity.GetType().GetProperty("id").GetValue(entity))
+        if (id != (int)entity.GetType().GetProperty("Id").GetValue(entity))
         {
             return BadRequest();
         }
