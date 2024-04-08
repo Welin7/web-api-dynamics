@@ -1,1 +1,1 @@
-# web-api-dynamics
+## Implemented the generic controller, a dynamic controller to define the insertion, getall, getbyid, update and delete methods. The generic controller allows you to make the code cleaner in the controller than its implementations.
